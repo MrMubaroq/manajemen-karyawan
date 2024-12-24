@@ -175,18 +175,36 @@ router.get('/attendance', (req, res) => {
   });
 });
 
+
+// Get all payrolls
+router.get("/payroll", (req, res) => {
+  const sql = "SELECT * FROM payrolls";
+  con.query(sql, (err, result) => {
+     if (err) return res.status(500).json({ Status: false, Error: err.message });
+     return res.json({ Status: true, Result: result });
+  });
+});
+
+// Add new payroll
+// Route untuk menambah payroll (di payrollRoute.js)
 router.post("/add_payroll", (req, res) => {
-  console.log("Request body:", req.body); // Log untuk debug
   const { employeeName, position, salary, payDate } = req.body;
+
+  if (!employeeName || !position || isNaN(salary) || !payDate) {
+    return res.status(400).json({ Status: false, Error: "Invalid input data" });
+  }
+
   const sql = "INSERT INTO payrolls (employeeName, position, salary, payDate) VALUES (?, ?, ?, ?)";
   con.query(sql, [employeeName, position, salary, payDate], (err, result) => {
-    if (err) {
-      console.error("Error inserting data:", err.message); // Log untuk debug
-      return res.json({ Status: false, Error: err.message });
-    }
+    if (err) return res.status(500).json({ Status: false, Error: err.message });
     return res.json({ Status: true, Message: "Payroll added successfully" });
   });
 });
+
+
+
+export default router;
+
 
 
 export {router as adminRouter}

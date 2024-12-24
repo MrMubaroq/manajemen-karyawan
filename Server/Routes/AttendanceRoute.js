@@ -35,4 +35,19 @@ router.get("/attendance", (req, res) => {
   });
 });
 
+// Endpoint untuk menambahkan data attendance
+router.post('/attendance/add_attendance', (req, res) => {
+  const { employeeName, date, status } = req.body;
+
+  const query = "INSERT INTO attendance (employeeName, date, status) VALUES (?, ?, ?)";
+  db.query(query, [employeeName, date, status], (err, result) => {
+      if (err) {
+          console.error(err);
+          res.status(500).json({ success: false, message: "Failed to add attendance" });
+      } else {
+          res.status(200).json({ success: true, message: "Attendance added successfully" });
+      }
+  });
+});
+
 export default router;

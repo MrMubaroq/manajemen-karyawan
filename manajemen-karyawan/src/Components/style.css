@@ -140,4 +140,226 @@ body {
       height: 100px;
     }
   }
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 0;
+}
+
+.app-container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+h2 {
+  margin-top: 0;
+  color: #333;
+}
+
+/* Form Styles */
+.form-container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"] {
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #4caf50;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+.error-message {
+  color: #ff0000;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+/* Table Styles */
+.payroll-list-container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table th,
+table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+table th {
+  background-color: #4caf50;
+  color: white;
+}
+
+table tr:hover {
+  background-color: #f5f5f5;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .app-container {
+    width: 100%;
+  }
+
+  form {
+    width: 100%;
+  }
+}
   
+/* Tambahan untuk styling tombol */
+.add-payroll-button {
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.add-payroll-button:hover {
+  background-color: #45a049;
+}
+.add-payroll-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+  color: #333;
+}
+
+.add-payroll-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 6px;
+}
+
+input {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+input[type="date"] {
+  padding: 10px;
+  background-color: white;
+}
+
+button.submit-button {
+  padding: 12px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+button.submit-button:hover {
+  background-color: #45a049;
+}
+
+.error-message {
+  color: red;
+  text-align: center;
+}
+
+.success-message {
+  color: green;
+  text-align: center;
+}
+.btn-secondary {
+  background-color: #030302; /* Warna hitam */
+  color: #ffffff; /* Warna teks putih */
+  border: none; /* Hilangkan border */
+  border-radius: 4px; /* Sedikit melengkungkan sudut */
+  padding: 10px 20px; /* Spasi di dalam tombol */
+  font-size: 16px; /* Ukuran font */
+  font-weight: bold; /* Tebalkan teks */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Efek transisi */
+}
+
+.btn-secondary:hover {
+  background-color: #050605; /* Warna abu-abu gelap saat hover */
+  transform: scale(1.05); /* Sedikit memperbesar tombol */
+}
+
+.btn-secondary:focus {
+  outline: none; /* Hilangkan outline biru bawaan browser */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Tambahkan efek bayangan fokus */
+}
+
+.me-2 {
+  margin-right: 0.5rem; /* Margin kanan untuk spasi antar tombol */
+}
+.spaced-div {
+  margin-top: 20px; /* Tambahkan jarak vertikal */
+}

@@ -2,9 +2,8 @@ import express from "express";
 import cors from "cors";
 import { adminRouter } from "./Routes/AdminRoute.js";
 import { EmployeeRouter } from "./Routes/EmployeeRoute.js";
-import attendanceRouter from "./Routes/AttendanceRoute.js";  // Default import
-import { PayrollRouter } from "./Routes/PayrollRoute.js";
-
+import  attendanceRouter  from "./Routes/AttendanceRoute.js";  // Default import
+import  PayrollRouter  from "./Routes/PayrollRoute.js";
 import jwt from "jsonwebtoken";
 import cookieParser from "cookie-parser";
 
@@ -26,7 +25,7 @@ app.use(cookieParser()); // Parse cookies
 app.use("/auth", adminRouter);
 app.use("/employee", EmployeeRouter);
 app.use("/attendance", attendanceRouter);
-app.use("/payroll", PayrollRouter);
+app.use("/payroll",PayrollRouter);
 app.use(express.static("Public")); // Serve static files from 'Public' folder
 
 // Middleware to verify user authentication
