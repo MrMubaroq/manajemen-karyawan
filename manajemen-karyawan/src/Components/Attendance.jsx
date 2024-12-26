@@ -52,50 +52,9 @@ const Attendance = () => {
 
   return (
     <div className="container mt-4">
-      <h2 className="text-center mb-4">Attendance Management</h2>
-
-      {/* Form to Add Attendance */}
-      <form onSubmit={handleSubmit} className="mb-4">
-        <div className="form-group mb-3">
-          <label>Employee Name</label>
-          <input
-            type="text"
-            className="form-control"
-            name="employeeName"
-            value={form.employeeName}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className="form-group mb-3">
-          <label>Date</label>
-          <input
-            type="date"
-            className="form-control"
-            name="date"
-            value={form.date}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className="form-group mb-3">
-          <label>Status</label>
-          <select
-            className="form-control"
-            name="status"
-            value={form.status}
-            onChange={handleChange}
-          >
-            <option value="Present">Present</option>
-            <option value="Absent">Absent</option>
-            <option value="Leave">Leave</option>
-          </select>
-        </div>
-        <button type="submit" className="btn btn-primary">
-          Add Attendance
-        </button>
-      </form>
-
+<div className="custom-box text-center mb-4 p-3">
+  Absen Karyawan
+</div>
       {/* Attendance Table */}
       <table className="table table-bordered">
         <thead>

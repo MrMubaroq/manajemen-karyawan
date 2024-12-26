@@ -231,12 +231,12 @@ table td {
 }
 
 table th {
-  background-color: #4caf50;
+  background-color:#28a745;
   color: white;
 }
 
 table tr:hover {
-  background-color: #f5f5f5;
+  background-color: #ffffff;
 }
 
 /* Responsive Styles */
@@ -254,7 +254,7 @@ table tr:hover {
 .add-payroll-button {
   padding: 10px 20px;
   margin-bottom: 20px;
-  background-color: #4caf50;
+  background-color: #32a557;
   color: white;
   border: none;
   border-radius: 4px;
@@ -263,7 +263,7 @@ table tr:hover {
 }
 
 .add-payroll-button:hover {
-  background-color: #45a049;
+  background-color: #37b84a;
 }
 .add-payroll-container {
   max-width: 600px;
@@ -324,7 +324,7 @@ button.submit-button {
 }
 
 button.submit-button:hover {
-  background-color: #45a049;
+  background-color: #57af44;
 }
 
 .error-message {
@@ -363,3 +363,150 @@ button.submit-button:hover {
 .spaced-div {
   margin-top: 20px; /* Tambahkan jarak vertikal */
 }
+/* Memberikan latar belakang putih pada halaman login */
+.loginPage {
+  background-color: white; /* Latar belakang halaman menjadi putih */
+}
+
+/* Memberikan gaya pada form login */
+.loginForm {
+  box-shadow: 0px 0px 10px rgb(255, 253, 253); /* Menambahkan bayangan lembut pada form */
+  padding: 20px; /* Menambahkan padding untuk memberikan jarak pada konten form */
+}
+
+/* Memberikan gaya pada teks judul */
+h2 {
+  color: #ffffff; 
+  font-weight: bold; 
+}
+
+
+button {
+  width: 45%; 
+}
+
+
+.btn-primary {
+  background-color: #007bff; 
+  border-color: #007bff;
+}
+
+
+.btn-success {
+  background-color: #28a745; 
+  border-color: #28a745;
+}
+
+
+button + button {
+  margin-left: 10px;
+}
+/* Container untuk tombol Edit dan Logout */
+.button-container {
+  display: flex; /* Menggunakan flexbox agar tombol disusun dalam baris */
+  justify-content: center; /* Menyusun tombol di tengah secara horizontal */
+  gap: 15px; /* Memberikan jarak antar tombol */
+  margin-bottom: 20px; /* Memberikan jarak antara tombol Edit/Logout dan tombol Attendance */
+}
+
+/* Tombol Edit dan Logout */
+.button-container .btn {
+  font-weight: bold; /* Menebalkan teks pada tombol */
+  padding: 10px 20px; /* Memberikan ruang dalam tombol */
+  border-radius: 8px; /* Membuat sudut tombol sedikit membulat */
+  cursor: pointer; /* Menampilkan cursor pointer saat hover */
+  transition: background-color 0.3s, transform 0.3s; /* Efek transisi saat hover */
+  width: 150px; /* Menetapkan lebar tombol agar konsisten */
+}
+
+.button-container .btn-primary {
+  background-color: #007bff; /* Warna biru untuk tombol Edit */
+  color: white; /* Teks putih */
+}
+
+.button-container .btn-danger {
+  background-color: #dc3545; /* Warna merah untuk tombol Logout */
+  color: white; /* Teks putih */
+}
+
+/* Efek hover untuk tombol Edit dan Logout */
+.button-container .btn:hover {
+  opacity: 0.8; /* Menambahkan efek transparansi pada tombol saat hover */
+  transform: translateY(-3px); /* Efek angkat tombol sedikit saat hover */
+}
+
+/* Container untuk tombol Attendance */
+.attendance-container {
+  display: flex;
+  justify-content: center; /* Menyusun tombol Attendance di tengah */
+  margin-top: 10px; /* Memberikan jarak antara tombol Attendance dan tombol sebelumnya */
+}
+
+/* Tombol Attendance */
+.attendance-container .btn-secondary {
+  background-color: #080808; /* Warna abu-abu untuk tombol Attendance */
+  color: white; /* Teks putih */
+  padding: 10px 20px; /* Memberikan ruang dalam tombol */
+  border-radius: 8px; /* Membuat sudut tombol sedikit membulat */
+  font-weight: bold; /* Menebalkan teks */
+  cursor: pointer; /* Menampilkan cursor pointer saat hover */
+  transition: background-color 0.3s, transform 0.3s; /* Efek transisi */
+  width: 150px; /* Menetapkan lebar tombol agar konsisten */
+}
+
+/* Efek hover untuk tombol Attendance */
+.attendance-container .btn-secondary:hover {
+  opacity: 0.8; /* Menambahkan efek transparansi pada tombol saat hover */
+  transform: translateY(-3px); /* Efek angkat tombol sedikit saat hover */
+}
+
+
+.custom-box {
+  background-color: #0667d0; 
+  color: white; 
+  border-radius: 7px;
+  font-weight: bold; 
+  width: auto; 
+  margin: 0 auto; 
+  padding: 10px 20px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); 
+  text-transform: uppercase; 
+  letter-spacing: 1px; 
+  max-width: 80%; 
+  transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.custom-box:hover {
+  transform: translateY(-5px); /* Efek hover: mengangkat kotak sedikit */
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Bayangan lebih dalam saat hover */
+}
+.add-payroll-button {
+  background-color: #28a745; /* Warna latar belakang hijau */
+  color: white; /* Warna teks putih */
+  border: none; /* Menghilangkan border default */
+  border-radius: 5px; /* Sudut yang membulat */
+  padding: 8px 16px; /* Padding lebih kecil untuk tombol lebih kompak */
+  font-size: 16px; /* Ukuran font */
+  font-weight: bold; /* Menebalkan teks */
+  cursor: pointer; /* Menampilkan cursor pointer saat hover */
+  transition: background-color 0.3s, transform 0.3s; /* Efek transisi saat hover */
+  width: auto; /* Menyesuaikan lebar tombol dengan teks di dalamnya */
+  display: inline-block; /* Membuat tombol sesuai dengan lebar konten */
+}
+
+.add-payroll-button:hover {
+  background-color: #218838; /* Warna hijau lebih gelap saat hover */
+  transform: translateY(-2px); /* Efek angkat tombol sedikit saat hover */
+}
+
+.add-payroll-button:focus {
+  outline: none; /* Menghilangkan outline saat tombol di-klik */
+}
+
+.add-payroll-button:active {
+  transform: translateY(2px); /* Efek tombol tertekan saat diklik */
+}
+
+
+
+

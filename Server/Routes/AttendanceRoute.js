@@ -50,4 +50,22 @@ router.post('/attendance/add_attendance', (req, res) => {
   });
 });
 
+// Endpoint untuk mengecek absensi
+router.get('/attendance/check_attendance', (req, res) => {
+  const { employeeName, date } = req.query;
+
+  const query = "SELECT * FROM attendance WHERE employeeName = ? AND date = ?";
+  db.query(query, [employeeName, date], (err, result) => {
+      if (err) {
+          console.error(err);
+          res.status(500).json({ attended: false, message: "Error checking attendance" });
+      } else if (result.length > 0) {
+          res.status(200).json({ attended: true }); // Karyawan sudah absen
+      } else {
+          res.status(200).json({ attended: false }); // Karyawan belum absen
+      }
+  });
+});
+
+
 export default router;

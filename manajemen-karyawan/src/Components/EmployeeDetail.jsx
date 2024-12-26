@@ -4,13 +4,25 @@ import { useNavigate, useParams } from 'react-router-dom'
 
 const EmployeeDetail = () => {
     const [employee, setEmployee] = useState({})
+    const [hasAttended, setHasAttended] = useState(false) // State untuk cek absensi
     const { id } = useParams()
     const navigate = useNavigate()
 
     useEffect(() => {
+        // Fetch employee details
         axios.get('http://localhost:3000/employee/detail/' + id)
             .then(result => {
                 setEmployee(result.data[0])
+
+                // Cek apakah karyawan sudah absen hari ini
+                const today = new Date().toISOString().split('T')[0]
+                axios.get(`http://localhost:3000/attendance/check_attendance?employeeName=${result.data[0].name}&date=${today}`)
+                    .then(response => {
+                        if (response.data.attended) {
+                            setHasAttended(true) // Jika sudah absen, sembunyikan tombol
+                        }
+                    })
+                    .catch(err => console.log(err))
             })
             .catch(err => console.log(err))
     }, [])
@@ -36,6 +48,7 @@ const EmployeeDetail = () => {
             .then(response => {
                 if (response.data.success) {
                     alert("Attendance recorded successfully!")
+                    setHasAttended(true) // Sembunyikan tombol setelah absensi
                 } else {
                     alert("Failed to record attendance.")
                 }
@@ -44,29 +57,6 @@ const EmployeeDetail = () => {
                 console.error("Error recording attendance:", error)
             })
     }
-
-    const fetchAttendance = () => {
-        axios
-          .get("http://localhost:3000/attendance/attendance")
-          .then((response) => {
-            setAttendanceData(response.data);
-            checkAttendance();
-          })
-          .catch((error) => {
-            console.error("Error fetching attendance data:", error);
-          });
-      };
-    
-      const checkAttendance = () => {
-        const tanggal = new Date().toISOString().split('T')[0];
-        const existingData = attendanceData.find(data => data.date === tanggal && data.name === 'Nama Karyawan' && data.status === 'Present');
-    
-        if (existingData) {
-          setIsPresent(true);
-        } else {
-          setIsPresent(false);
-        }
-      };
 
     return (
         <div>
@@ -80,14 +70,19 @@ const EmployeeDetail = () => {
                     <h3>Email: {employee.email}</h3>
                     <h3>Salary: ${employee.salary}</h3>
                 </div>
-                <div>
-                    <button className='btn btn-primary me-2'>Edit</button>
-                    <button className='btn btn-danger' onClick={handleLogout}>Logout</button>
-                </div>
-                <div className="spaced-div">
-                    <button className='btn btn-secondary me-2' onClick={handleAttendance}>Attendance</button>
-                    
-                </div>
+                <div className="button-container">
+  <button className='btn btn-primary me-2'>Edit</button>
+  <button className='btn btn-danger' onClick={handleLogout}>Logout</button>
+</div>
+
+{/* Tombol Attendance hanya tampil jika kondisi terpenuhi */}
+{!hasAttended && (
+  <div className="attendance-container">
+    <button className='btn btn-secondary' onClick={handleAttendance}>Attendance</button>
+  </div>
+)}
+
+
             </div>
         </div>
     )
